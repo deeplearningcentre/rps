@@ -33,18 +33,29 @@
                 let computerScore = 0;
                 
                 for(let i=0; i<5; i++){
-                    playerSelection = prompt('Enter your choice');
+                    playerSelection = prompt('ROCK or PAPER or SCISSOR');
                     computerSelection = computerPlay();
                     let check = playRound(playerSelection, computerSelection);
-                    if(check === 'draw') continue;
-                    else if(check === 'computerWins') computerScore++;
-                    else playerScore++; 
+                    if(check === 'draw'){ 
+                        alert('Draw\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection); 
+                        continue;
+                    }
+                    else if(check === 'computerWins'){
+                        alert('Computer Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
+                        computerScore++;
+                    } 
+                    else{
+                        alert('You Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
+                        playerScore++;
+                    }  
                 }
 
-                if(playerScore == computerScore) return "Draw";
-                else if(playerScore > computerScore) return "You win";
-                else return "Computer win";
+                if(playerScore === computerScore) alert('Game is drawn.Try again\nPlayer: '+playerScore+'\nComputer: '+computerScore);
+                else if(playerScore > computerScore) alert('You win !!Well played\nPlayer: '+playerScore+'\nComputer: '+computerScore);
+                else alert('Computer Win.!!Better Luck Next Time\nPlayer: '+playerScore+'\nComputer: '+computerScore);
             }
+
+            game();
         </script>
     </body>
 </html>
