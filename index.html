@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissor</title>
+    </head>
+    <body>
+        <script>
+            function computerPlay(){
+             let selection = ["rock","paper","scissor"];
+             var randomNumber = Math.floor(Math.random()*selection.length);
+             return selection[randomNumber];
+            }
+            function playRound(playerSelection,computerSelection){
+                playerSelection = playerSelection.toLowerCase();
+                
+                if(playerSelection == computerSelection) 
+                    return "draw";
+                else if(playerSelection == 'rock'){
+                    return computerSelection == 'paper'? "computerWins" : "playerWins";
+                }
+                else if(playerSelection == 'paper'){
+                    return computerSelection == 'scissor'? "computerWins" : "playerWins";
+                }
+                else {
+                    return computerSelection == 'rock'? "computerWins" : "playerWins";
+                }
+            }
+
+            function game(){
+                let playerSelection = null;
+                let computerSelection = null;
+                let playerScore = 0;
+                let computerScore = 0;
+                
+                for(let i=0; i<5; i++){
+                    playerSelection = prompt('Enter your choice');
+                    computerSelection = computerPlay();
+                    let check = playRound(playerSelection, computerSelection);
+                    if(check === 'draw') continue;
+                    else if(check === 'computerWins') computerScore++;
+                    else playerScore++; 
+                }
+
+                if(playerScore == computerScore) return "Draw";
+                else if(playerScore > computerScore) return "You win";
+                else return "Computer win";
+            }
+        </script>
+    </body>
+</html>
