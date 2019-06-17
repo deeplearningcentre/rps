@@ -1,13 +1,23 @@
+// Initial variable requires to begin game
 let playerSelection = null;
 let computerSelection = null;
 let playerScore = 0;
 let computerScore = 0;
 
-let btn = document.querySelectorAll('.btn');
-let scoreDisplay = document.querySelectorAll('scoreDisplay');
+//Selecting DOM elements to update them dynamically
+let container = document.querySelector('#container');
+let btn = document.querySelectorAll('.btn'); //Create NodeList of player buttons.
+let scoreDisplay = document.querySelectorAll('.scoreDisplay');
+let logMsg = document.querySelector('#logMsg'); //Display the msg at bottom when user click on button
+
 btn.forEach(btn=>btn.addEventListener('click',(e)=>{
     playerSelection = e.target.value;
     console.log(playerSelection);
+    computerSelection =  computerPlay();
+    playRound(playerSelection,computerSelection);
+    let check = playRound(playerSelection, computerSelection);
+    displayEachRoundResult(check);
+
 }));
 
 let computerPlay = () => {
@@ -30,16 +40,17 @@ let playRound = (playerSelection,computerSelection) => {
 }
 
 let displayEachRoundResult = (check) => {
-    if(check === 'draw'){ 
-            alert('Draw\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection); 
+    logMsg.textContent = '';
+    if(check === 'draw'){
+        logMsg.textContent = "Tie";
     }
     else if(check === 'computerWins'){
-        alert('Computer Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
-        computerScore++;
+        scoreDisplay[1].textContent = ++computerScore;
+        logMsg.textContent = "Computer Win"
     } 
     else{
-        alert('You Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
-        playerScore++;
+        scoreDisplay[0].textContent = ++playerScore;
+        logMsg.textContent = "You Win"
     }  
 }
 
@@ -50,15 +61,8 @@ let displayOverallResult = (playerScore,ComputerScore) => {
 }
 
 let game = function() {
-    
-    
-    for(let i=0; i<5; i++){
-        playerSelection = prompt('ROCK or PAPER or SCISSOR').toLowerCase();
-        computerSelection = computerPlay();
-        let check = playRound(playerSelection, computerSelection);
-        displayEachRoundResult(check);
-    }
-
+    let check = playRound(playerSelection, computerSelection);
+    displayEachRoundResult(check);
     displayOverallResult(playerScore,computerScore);
 }
 
