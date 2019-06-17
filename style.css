@@ -1,0 +1,19 @@
+*{
+    /* box-sizing: border-box; */
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+main#container{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+#player,#computer {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}

@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title>Rock Paper Scissor</title>
     </head>
     <body>
-        <script>
-            function computerPlay(){
-             let selection = ["rock","paper","scissor"];
-             var randomNumber = Math.floor(Math.random()*selection.length);
-             return selection[randomNumber];
-            }
-            function playRound(playerSelection,computerSelection){
-                playerSelection = playerSelection.toLowerCase();
-                
-                if(playerSelection == computerSelection) 
-                    return "draw";
-                else if(playerSelection == 'rock'){
-                    return computerSelection == 'paper'? "computerWins" : "playerWins";
-                }
-                else if(playerSelection == 'paper'){
-                    return computerSelection == 'scissor'? "computerWins" : "playerWins";
-                }
-                else {
-                    return computerSelection == 'rock'? "computerWins" : "playerWins";
-                }
-            }
-
-            function game(){
-                let playerSelection = null;
-                let computerSelection = null;
-                let playerScore = 0;
-                let computerScore = 0;
-                
-                for(let i=0; i<5; i++){
-                    playerSelection = prompt('ROCK or PAPER or SCISSOR');
-                    computerSelection = computerPlay();
-                    let check = playRound(playerSelection, computerSelection);
-                    if(check === 'draw'){ 
-                        alert('Draw\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection); 
-                        continue;
-                    }
-                    else if(check === 'computerWins'){
-                        alert('Computer Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
-                        computerScore++;
-                    } 
-                    else{
-                        alert('You Win\n\n'+'Player: '+playerSelection+'  '+'Computer: '+computerSelection);
-                        playerScore++;
-                    }  
-                }
-
-                if(playerScore === computerScore) alert('Game is drawn.Try again\nPlayer: '+playerScore+'\nComputer: '+computerScore);
-                else if(playerScore > computerScore) alert('You win !!Well played\nPlayer: '+playerScore+'\nComputer: '+computerScore);
-                else alert('Computer Win.!!Better Luck Next Time\nPlayer: '+playerScore+'\nComputer: '+computerScore);
-            }
-
-            game();
-        </script>
+        <main id="container">
+            <section id="player">
+                <h1>Player</h1>
+                <div class="score">
+                    <h2>Score</h2>
+                    <div id="Score-display"></div>
+                </div>
+                <div class="item-selection">
+                    <button class="btn">Rock</button>
+                    <button class="btn">Paper</button>
+                    <button class="btn">Scissor</button>
+                </div>
+            </section>
+            <section id="computer">
+                <h1>Computer</h1>
+                <div class="score">
+                    <h2>Score</h2>
+                    <div id="Score-display"></div>
+                </div>
+                <div class="item-selection">
+                    <button>dont know</button>
+                </div>
+            </section>
+        </main>
+        <!-- <script src="script.js"></script> -->
     </body>
 </html>
