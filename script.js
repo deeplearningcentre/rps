@@ -3,16 +3,18 @@ let playerSelection = null;
 let computerSelection = null;
 let playerScore = 0;
 let computerScore = 0;
+let roundCounter = 0; //track number of times game played
 
 //Selecting DOM elements to update them dynamically
 let container = document.querySelector('#container');
 let btn = document.querySelectorAll('.btn'); //Create NodeList of player buttons
 let scoreDisplay = document.querySelectorAll('.scoreDisplay');
 let logMsg = document.querySelector('#logMsg'); //Display the msg at bottom when user click on button
+let roundIteration = document.querySelector('#roundIteration');
 
 btn.forEach(btn=>btn.addEventListener('click',(e)=>{
     playerSelection = e.target.value;
-    console.log(playerSelection);
+    roundCounter++;
     computerSelection =  computerPlay();
     let check = playRound(playerSelection, computerSelection);
     displayEachRoundResult(check);
@@ -39,6 +41,7 @@ let playRound = (playerSelection,computerSelection) => {
 
 let displayEachRoundResult = (check) => {
     logMsg.textContent = '';
+    roundIteration.innerHTML = `<h1>ROUND ${roundCounter}</h1>`
     if(check === 'draw'){
         logMsg.textContent = "Tie";
     }

@@ -4,31 +4,51 @@
     padding: 0px;
     font-size: 18px;
 }
-
+html,body{
+    height: 100vh;
+}
 body{
     display: flex;
     flex-direction: column;
 }
-main#container{
+div#container{
     display: flex;          
-    justify-content: space-around;
-    flex-grow:1; 
-    line-height: 32px;
+    flex-direction: column;
     border: 4px dashed coral;
+    flex: 1;
 }
-footer{
-    height: 20vh;
-    background-color: #2f2f2f;
+#main-content{
+    display: flex;
+    flex:1;
+    padding: 20px;
 }
 #player,#computer {
     border: 2px solid green;
     display: flex;
     flex-direction: column;
     flex: 1;
-    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+footer{
+    height: 20vh;
+    background-color: #2f2f2f;
 }
 
-#logMsg{
+#logMsg,#roundIteration{
     display: flex;
-    flex-grow: 1;
+    justify-content: center;
+    font-weight: bold;
+}
+.scoreDisplay{
+    display: flex;
+    justify-content: center;
+    border: 2px solid lightcoral;
+    padding: 10px;
+    border-radius: 8px;
+    width: 40%;
+    margin: 0 auto;
+    background: #2d2d2d;
+    color: #fff;
+
 }
