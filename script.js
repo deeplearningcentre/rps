@@ -15,9 +15,6 @@ let roundIteration = document.querySelector('#roundIteration');
 btn.forEach(btn=>btn.addEventListener('click',(e)=>{
     playerSelection = e.target.value;
     roundCounter++;
-    computerSelection =  computerPlay();
-    let check = playRound(playerSelection, computerSelection);
-    displayEachRoundResult(check);
 }));
 
 let computerPlay = () => {
@@ -61,10 +58,11 @@ let displayOverallResult = (playerScore,ComputerScore) => {
     else alert('Computer Win.!!Better Luck Next Time\nPlayer: '+playerScore+'\nComputer: '+computerScore);
 }
 
-let game = function() {
-    let check = playRound(playerSelection, computerSelection);
-    displayEachRoundResult(check);
-    displayOverallResult(playerScore,computerScore);
+let beginGame = function() {
+    computerSelection =  computerPlay();
+        let check = playRound(playerSelection, computerSelection);
+        displayEachRoundResult(check);   
+    // displayOverallResult(playerScore,computerScore);
 }
 
-//    game();
+   beginGame();
