@@ -14,7 +14,7 @@ let roundIteration = document.querySelector('#roundIteration');
 
 btn.forEach(btn=>btn.addEventListener('click',(e)=>{
     playerSelection = e.target.value;
-    roundCounter++;
+    beginGame();
 }));
 
 let computerPlay = () => {
@@ -23,6 +23,7 @@ let computerPlay = () => {
 }
 
 let playRound = (playerSelection,computerSelection) => {
+    roundCounter++;
     if(playerSelection == computerSelection) 
         return "draw";
     else if(playerSelection == 'rock'){
@@ -52,7 +53,7 @@ let displayEachRoundResult = (check) => {
     }  
 }
 
-let displayOverallResult = (playerScore,ComputerScore) => {
+let gameOver = (playerScore,ComputerScore) => {
     if(playerScore === computerScore) alert('Game is drawn.Try again\nPlayer: '+playerScore+'\nComputer: '+computerScore);
     else if(playerScore > computerScore) alert('You win !!Well played\nPlayer: '+playerScore+'\nComputer: '+computerScore);
     else alert('Computer Win.!!Better Luck Next Time\nPlayer: '+playerScore+'\nComputer: '+computerScore);
@@ -60,9 +61,9 @@ let displayOverallResult = (playerScore,ComputerScore) => {
 
 let beginGame = function() {
     computerSelection =  computerPlay();
-        let check = playRound(playerSelection, computerSelection);
-        displayEachRoundResult(check);   
-    // displayOverallResult(playerScore,computerScore);
+    let check = playRound(playerSelection, computerSelection);
+    displayEachRoundResult(check);  
+    if(playerScore === 5 || computerScore ===5){
+      gameOver(playerScore,computerScore);  
+    }
 }
-
-   beginGame();
