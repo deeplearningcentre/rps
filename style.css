@@ -5,9 +5,12 @@
     font-size: 18px;
 }
 
-
-main#container{
+body{
     display: flex;
+    flex-direction: column;
+}
+main#container{
+    display: flex;          
     justify-content: space-around;
     flex-grow:1; 
     line-height: 32px;
@@ -23,4 +26,9 @@ footer{
     flex-direction: column;
     flex: 1;
     align-items: center;
+}
+
+#logMsg{
+    display: flex;
+    flex-grow: 1;
 }

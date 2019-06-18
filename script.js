@@ -6,7 +6,7 @@ let computerScore = 0;
 
 //Selecting DOM elements to update them dynamically
 let container = document.querySelector('#container');
-let btn = document.querySelectorAll('.btn'); //Create NodeList of player buttons.
+let btn = document.querySelectorAll('.btn'); //Create NodeList of player buttons
 let scoreDisplay = document.querySelectorAll('.scoreDisplay');
 let logMsg = document.querySelector('#logMsg'); //Display the msg at bottom when user click on button
 
@@ -14,10 +14,8 @@ btn.forEach(btn=>btn.addEventListener('click',(e)=>{
     playerSelection = e.target.value;
     console.log(playerSelection);
     computerSelection =  computerPlay();
-    playRound(playerSelection,computerSelection);
     let check = playRound(playerSelection, computerSelection);
     displayEachRoundResult(check);
-
 }));
 
 let computerPlay = () => {
