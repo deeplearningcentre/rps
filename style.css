@@ -4,9 +4,9 @@
     padding: 0px;
     font-size: 18px;
 }
-html,body{
+/* html,body{
     height: 100vh;
-}
+} */
 body{
     display: flex;
     flex-direction: column;
@@ -16,22 +16,24 @@ div#container{
     flex-direction: column;
     border: 4px dashed coral;
     flex: 1;
+    text-align: center;
 }
 #main-content{
     display: flex;
     flex:1;
-    padding: 20px;
 }
 #player,#computer {
     border: 2px solid green;
     display: flex;
     flex-direction: column;
     flex: 1;
-    text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 footer{
-    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     background-color: #2f2f2f;
 }
 
@@ -40,15 +42,47 @@ footer{
     justify-content: center;
     font-weight: bold;
 }
-.scoreDisplay{
-    display: flex;
-    justify-content: center;
-    border: 2px solid lightcoral;
-    padding: 10px;
-    border-radius: 8px;
-    width: 40%;
-    margin: 0 auto;
-    background: #2d2d2d;
-    color: #fff;
 
+.score{
+    display: flex;
+    flex-direction: column;
+}
+.scoreDisplay{
+    width: 40%;
+    margin: 7vh auto;
+    border-radius: 8px;
+    padding: 1vh;
+    font-size: 5vh;
+    background: #2f2f2f;
+    color: #fff;
+}
+.itemSelection{
+    display: flex;
+    justify-content: space-between;
+}
+.itemSelection button{
+    background: none;
+    border: none;
+}
+.itemSelection button img{
+    width: 100%;
+    height: auto;
+}
+
+#container > *{
+    padding: 20px;
+}
+
+#title h1{
+    font-size: 6vh;
+    font-family: monospace;
+    color: firebrick;
+}
+#roundIteration h1{
+    font-size: 4vh;
+    color: #3569b1
+}
+.score h2{
+    font-size: 3.7vh;
+    padding: 5vh;
 }
