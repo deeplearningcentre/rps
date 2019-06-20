@@ -14,7 +14,6 @@ body{
 div#container{
     display: flex;          
     flex-direction: column;
-    border: 4px dashed coral;
     flex: 1;
     text-align: center;
 }
@@ -23,7 +22,6 @@ div#container{
     flex:1;
 }
 #player,#computer {
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -48,6 +46,7 @@ footer{
     display: flex;
     flex-direction: column;
 }
+
 .scoreDisplay{
     width: 40%;
     margin: 7vh auto;
@@ -64,6 +63,10 @@ footer{
 .itemSelection button{
     background: none;
     border: none;
+}
+
+.itemSelection button:focus,.itemSelection button:hover{
+    border: 3px solid cyan;
 }
 
 .resp-img{
@@ -95,9 +98,12 @@ footer{
 
 .disablePage{
     position: absolute;
-    height: 100%;
+    top: -100%;
+    left: 0;
+    height:100%;
     width: 100%;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    transition: all 3s;
 }
 
 #gameOver{

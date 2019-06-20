@@ -65,8 +65,8 @@ let displayEachRoundResult = (check) => {
 
 let gameOver = (playerScore,ComputerScore) => {
     let hakePage = document.getElementById('page-hack');
-    hakePage.classList.add('disablePage');
-    let div = document.createElement('div');
+    hakePage.style.top = "0"; //Allow to display Game Over page.
+    let div = document.createElement('div'); 
     let button = document.createElement('button');
 
     div.setAttribute('id','gameOver')
@@ -76,7 +76,7 @@ let gameOver = (playerScore,ComputerScore) => {
     }else{
         div.innerHTML += "<p>Computer Win!! Better luck next time<p>"
     }
-    button.innerText += "Play Again";
+    button.innerText = "Play Again";
     div.append(button);
     hakePage.append(div);
     button.addEventListener('click',gameReset);
@@ -88,7 +88,13 @@ let gameReset =  () => {
     playerScore = 0;
     computerScore = 0;
     roundCounter = 0; //track number of times game played
-    hakePage.classList.remove('disablePage');
+    let hakePage = document.getElementById('page-hack');
+    hakePage.style.top = '-100%';
+    hakePage.innerHTML = "";
+    
+    logMsg.textContent = '';
+    roundIteration.innerHTML = `<h1>Round 0<h1>`;
+    scoreDisplay.forEach( item=> item.textContent = '0');
 }
 
 let beginGame = function() {
