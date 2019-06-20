@@ -38,6 +38,7 @@ footer{
 }
 #logMsg,#roundIteration{
     display: flex;
+    font-size: 3vh;
     justify-content: center;
     font-weight: bold;
 }
@@ -60,7 +61,7 @@ footer{
     display: flex;
     justify-content: space-between;
 }
-.itemSelection button{
+.itemSelection button,.itemInsert button{
     background: none;
     border: none;
 }
@@ -70,7 +71,7 @@ footer{
 }
 
 .resp-img{
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 

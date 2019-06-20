@@ -30,18 +30,18 @@ let playRound = (playerSelection,computerSelection) => {
     else if(playerSelection === 'rock'){
         return computerSelection === 'paper'? "computerWins" : "playerWins"; 
     }
-    else if(playerSelection == 'paper'){
-        return computerSelection == 'scissors'? "computerWins" : "playerWins";
+    else if(playerSelection === 'paper'){
+        return computerSelection === 'scissors'? "computerWins" : "playerWins";
     }
     else {
-        return computerSelection == 'rock'? "computerWins" : "playerWins";
+        return computerSelection === 'rock'? "computerWins" : "playerWins";
     }
 }
 
 let displayEachRoundResult = (check) => {
     logMsg.textContent = '';
     roundIteration.innerHTML = `<h1>Round ${roundCounter}<h1>`;
-    itemInsert.innerHTML = `<img src="img/${computerSelection}.svg">`;
+    itemInsert.innerHTML = `<button><img class="resp-img" src="img/${computerSelection}.svg"></button>`;
     if(check === 'draw'){
         logMsg.textContent = "Oh gosh!! Its tie";
     }
