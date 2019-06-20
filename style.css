@@ -1,12 +1,12 @@
 *{
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+html,body{
+    height: 100%;
     font-size: 18px;
 }
-/* html,body{
-    height: 100vh;
-} */
 body{
     display: flex;
     flex-direction: column;
@@ -35,8 +35,9 @@ footer{
     align-items: center;
     color: #fff;
     background-color: #2f2f2f;
+    font-size: 2vh;
+    padding: 10px;
 }
-
 #logMsg,#roundIteration{
     display: flex;
     justify-content: center;
@@ -64,7 +65,8 @@ footer{
     background: none;
     border: none;
 }
-.itemSelection button img{
+
+.resp-img{
     width: 100%;
     height: auto;
 }
@@ -85,4 +87,40 @@ footer{
 .score h2{
     font-size: 3.7vh;
     padding: 5vh;
+}
+.itemInsert{
+    display: flex;
+    justify-content: center;
+}
+
+.disablePage{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+#gameOver{
+    flex-direction: column;
+    display: flex;
+    font-size: 4vh;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: antiquewhite;
+    margin-top: 30%;
+}
+div#gameOver h1 {
+    color: #faa763
+}
+div#gameOver > * {
+    margin: 4vh;
+}
+div#gameOver > button{
+    font-size: 3vh;
+    padding: 2vh;
+    background-color: #1da1f2;
+    border-radius: 0.9vh;
+    color: white;
 }
