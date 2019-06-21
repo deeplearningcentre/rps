@@ -14,7 +14,7 @@ let roundIteration = document.querySelector('#roundIteration');
 let itemInsert = document.querySelector('.itemInsert'); //To insert the image on basis on computerSelection
 
 btn.forEach(btn=>btn.addEventListener('click',(e)=>{
-    playerSelection = e.target.parentNode.value;
+    playerSelection = e.target.parentNode.value || e.target.value;
     beginGame();
 }));
 
