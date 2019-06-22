@@ -41,7 +41,7 @@ let playRound = (playerSelection,computerSelection) => {
 let displayEachRoundResult = (check) => {
     logMsg.textContent = '';
     roundIteration.innerHTML = `<h1>Round ${roundCounter}<h1>`;
-    itemInsert.innerHTML = `<button><img class="resp-img" src="img/${computerSelection}.svg"></button>`;
+    itemInsert.innerHTML = `<button><img src="img/${computerSelection}.svg"></button>`;
     if(check === 'draw'){
         logMsg.textContent = "Oh gosh!! Its tie";
     }
@@ -101,7 +101,9 @@ let beginGame = function() {
     computerSelection =  computerPlay();
     let check = playRound(playerSelection, computerSelection);
     displayEachRoundResult(check);  
+    // When Score of player or computer reaches to 5 end game and declare winner of game
     if(playerScore === 5 || computerScore ===5){
-      gameOver(playerScore,computerScore);  
+      gameOver(playerScore,computerScore);
+      btn.forEach(button=>button.removeEventListener('click'));  
     }
 }

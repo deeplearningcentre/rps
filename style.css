@@ -1,7 +1,5 @@
 *{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
 }
 html,body{
     height: 100%;
@@ -9,126 +7,118 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    /* font-family: 'Anton', sans-serif; */
+    font: 1rem/1.6 Arial,sans-serif;
 }
-div#container{
-    display: flex;          
+
+/************************
+        Main-Content    *
+************************/
+#container{
+    display: flex;
     flex-direction: column;
-    flex: 1;
-    text-align: center;
+    text-align: center;  /*Allign all child element text in center */
+    flex-grow: 1;
+}
+#container > *{
+   padding: 1vh 0px;
 }
 #main-content{
     display: flex;
+    flex: 1;
+    padding-top: 4vh;
+}
+#player,#computer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex:1;
 }
-#player,#computer {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-}
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    background-color: #2f2f2f;
-    font-size: 2vh;
-    padding: 10px;
-}
-#logMsg,#roundIteration{
-    display: flex;
-    font-size: 3vh;
-    justify-content: center;
-    font-weight: bold;
-    color: #2aae57
-}
-
-.score{
-    display: flex;
-    flex-direction: column;
-    color: #ff8a00;
-    font-weight: 400;
-}
-
 .scoreDisplay{
+    display: flex;
+    justify-content: center;
     width: 40%;
     margin: 7vh auto;
     border-radius: 8px;
-    padding: 1vh;
     font-size: 5vh;
     background: #2f2f2f;
-    color: #fff;
+    color: #fff; 
 }
-.itemSelection{
+
+#main-content #player .itemSelection{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.itemSelection button,.itemInsert button{
+.itemSelection > button{
+    padding: 6px;
     background: none;
-    border: none;
+    border:none;
+    cursor: pointer;
+}
+aside{
+    border: 2px solid chocolate;
+    padding:10px;
+}
+footer{
+    padding: 1vh;
+    font-size:2vh;
+    text-align: center;
+    color: #83d0f2;
+    background-color:#222;
 }
 
-.itemSelection button:focus,.itemSelection button:hover{
-    border: 3px solid cyan;
-}
-
-.resp-img{
-    width: 80%;
-    height: auto;
-}
-
-#container > *{
-    padding: 20px;
-}
-
-#title h1{
+/******************************************
+    Modifying properties individually     *
+******************************************/ 
+#title h1 {
     font-size: 6vh;
     font-family: monospace;
     color: firebrick;
 }
-#roundIteration h1{
+#roundIteration h1 {
+    font-weight: bolder;
     font-size: 4vh;
-    color: #3569b1
+    color: #3569b1;
 }
-.score h2{
-    font-size: 3.7vh;
-    padding: 5vh;
+.score h2 {
+    font-size: 3.3vh;
+    color: #ff8a00;
 }
-.itemInsert{
-    display: flex;
-    justify-content: center;
+#logMsg{
+     font: bold small-caps italic 3vh/1.4 Georgia;
+    color: #2aae57;
+    font-family: monospace;
+}
+/* Responsive Image */
+img{
+    width: 70%;
+    height: auto;
 }
 
-.disablePage{
+.disablePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -100%;
     left: 0;
-    height:100%;
+    height: 100%;
     width: 100%;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     transition: all 3s;
 }
 
-#gameOver{
-    flex-direction: column;
+#gameOver {
     display: flex;
-    font-size: 4vh;
-    flex: 1;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
     font-weight: bold;
     color: antiquewhite;
-    margin-top: 30%;
+    font-size: 4vh;
+    line-height: 3;
 }
-div#gameOver h1 {
-    color: #faa763
-}
-div#gameOver > * {
-    margin: 4vh;
-}
-div#gameOver > button{
+
+#gameOver button{
+    margin-top: 3vh;
     font-size: 3vh;
     padding: 2vh;
     background-color: #1da1f2;
