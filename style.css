@@ -54,10 +54,6 @@ body{
     border:none;
     cursor: pointer;
 }
-aside{
-    border: 2px solid chocolate;
-    padding:10px;
-}
 footer{
     padding: 1vh;
     font-size:2vh;
@@ -84,9 +80,10 @@ footer{
     color: #ff8a00;
 }
 #logMsg{
-     font: bold small-caps italic 3vh/1.4 Georgia;
+    font: bold small-caps italic 3vh/1.4 Georgia;
     color: #2aae57;
     font-family: monospace;
+    padding:10px;
 }
 /* Responsive Image */
 img{

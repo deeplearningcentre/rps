@@ -10,13 +10,10 @@ let container = document.querySelector('#container');
 let btn = document.querySelectorAll('.btn'); //Create NodeList of player buttons
 let scoreDisplay = document.querySelectorAll('.scoreDisplay');
 let logMsg = document.querySelector('#logMsg'); //Display the msg at bottom when user click on button
+let msg = logMsg.textContent // Store the initial text of logMsg to use it when game reset.
 let roundIteration = document.querySelector('#roundIteration');
 let itemInsert = document.querySelector('.itemInsert'); //To insert the image on basis on computerSelection
 
-btn.forEach(btn=>btn.addEventListener('click',(e)=>{
-    playerSelection = e.target.parentNode.value || e.target.value;
-    beginGame();
-}));
 
 let computerPlay = () => {
     let computerChoice = ["rock","paper","scissors"];
@@ -92,18 +89,29 @@ let gameReset =  () => {
     hakePage.style.top = '-100%';
     hakePage.innerHTML = "";
     
-    logMsg.textContent = '';
+    logMsg.textContent = msg;
     roundIteration.innerHTML = `<h1>Round 0<h1>`;
     scoreDisplay.forEach( item=> item.textContent = '0');
+    btn.forEach(btn=>btn.addEventListener('click',handler)); 
 }
+
+/********************************
+            BEGIN GAME          *
+********************************/
+let handler = (e) => {
+    playerSelection = e.target.parentNode.value || e.target.value;
+    beginGame();
+}
+
+btn.forEach(btn=>btn.addEventListener('click',handler)); 
 
 let beginGame = function() {
     computerSelection =  computerPlay();
     let check = playRound(playerSelection, computerSelection);
-    displayEachRoundResult(check);  
-    // When Score of player or computer reaches to 5 end game and declare winner of game
-    if(playerScore === 5 || computerScore ===5){
-      gameOver(playerScore,computerScore);
-      btn.forEach(button=>button.removeEventListener('click'));  
+    displayEachRoundResult(check);
+    // When Score of player or computer reaches to 5 end game and declare winner of game 
+    if(playerScore == 5 || computerScore ==5){
+        gameOver(playerScore,computerScore);
+        btn.forEach(button=>button.removeEventListener('click',handler));    
     }
 }
