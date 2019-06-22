@@ -67,7 +67,7 @@ let gameOver = (playerScore,ComputerScore) => {
     let button = document.createElement('button');
 
     div.setAttribute('id','gameOver')
-    div.innerHTML = "<h1>Game Over</h1>";
+    div.innerHTML = "<h1 style='font-size:6vh; color:chocolate'>Game Over</h1>";
     if(playerScore > computerScore){
         div.innerHTML += "<p>Well Played!! YOU WIN<p>"
     }else{
@@ -88,7 +88,7 @@ let gameReset =  () => {
     let hakePage = document.getElementById('page-hack');
     hakePage.style.top = '-100%';
     hakePage.innerHTML = "";
-    
+    itemInsert.innerHTML = '';
     logMsg.textContent = msg;
     roundIteration.innerHTML = `<h1>Round 0<h1>`;
     scoreDisplay.forEach( item=> item.textContent = '0');
