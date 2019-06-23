@@ -1,6 +1,8 @@
 # rockPaperScissor
 Hi this is the first game I have created myself. Anyone can create this game with little bit programming knowledge. All you have to do is implement logic using if-else statement and use loop to continue your game.The time I spend a lot to design its UI.
 
+coderoo7.github.io/rockPaperScissor
+
 
 ## INTRODUCTION
 Rock Paper Scissor game is known by different names in different country like in India it is known by **Ro Sham Ba**.<br>
