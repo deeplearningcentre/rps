@@ -10,8 +10,8 @@ In this game user play against computer and when anyone user or computer got 5 p
 1. At begining click on any option rock,paper or scissor.
 2. As soon as you choose any option, the computer randomly choose its option and display at same time.
 3. The points are decided as follows.
-   1 Rock beats Scissor
-   2 Scissor beats Paper 
-   3 Paper beats Rock
+   * Rock beats Scissor
+   * Scissor beats Paper 
+   * Paper beats Rock
 4. Continue the game until any of you or computer get 5 points.
 5. When anyone got 5 points first will be declared as winner.
