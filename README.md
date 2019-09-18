@@ -16,4 +16,4 @@ In this game user play against computer and when anyone user or computer got 5 p
 5. When anyone got 5 points first will be declared as winner.
 
 ## Lets play the Game
-https://coderoo7.github.io/rockPaperScissor
+https://coderoo7.github.io/rps
